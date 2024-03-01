@@ -86,7 +86,8 @@ class Service{
         try {
             return await this.bucket.getFilePreview(config.appWriteBucketId,fileId)
         } catch (error) {
-            
+            console.log("App Write Storage Error (file preview)",error);    
+            return false;
         }
     }
 }
