@@ -1,7 +1,7 @@
 import { Client, Databases,Storage,Query, ID } from "appwrite";
 import config from "../conf/conf";
 
-class Service{
+export class Service{
     client = new Client();
     databases;
     bucket;
@@ -74,7 +74,7 @@ class Service{
 
     deleteDocument = async(fileId) =>{
         try{
-            await this.bucket.deleteFile(config.appWriteBucketId,file);
+            await this.bucket.deleteFile(config.appWriteBucketId,fileId);
             return true
         }catch(error){
             console.log("App Write Storage Error (upload)",error);    
